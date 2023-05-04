@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-lyiW8N6bKj6LRZn5i5q6W5uV7wzIxDyCv11iG6LPM09X/sTtH/tQGdCk8B+gNpC+bNfu/EdtBtf8/ODAF+GNqQ==" crossorigin="anonymous" />
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mentor Rating Form</title>
+ 
+	<style>
+		
+
+		.rating-container {
+  font-family: "Open Sans", sans-serif;
+  width: 400px;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom, #FFFFFF, #F5F5F5);
+  color: #333333;
+  text-align: center;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.criteria {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.criteria h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: right;
+ 
+}
+
+.submit-button:hover {
+background-color: #0077FF;
+}
+
+.submit-button {
+display: block;
+margin: 0 auto;
+padding: 10px 20px;
+background-color: #1E90FF;
+color: #FFFFFF;
+border: none;
+border-radius: 30px;
+font-size: 16px;
+font-weight: 700;
+text-transform: uppercase;
+cursor: pointer;
+transition: background-color 0.3s ease-in-out;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+
+  text-align: right;
+  background-color: #f7f7f7;
+  color: #333;
+  display: flex; /* Add this line */
+  justify-content: center; /* Add this line */
+  align-items: center; /* Add this line */
+  min-height: 100vh; /* Add this line */
+}
+
+	
+.sslider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  direction: rtl;
+}
+
+.sslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #1E90FF;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sslider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #1E90FF;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sslider-value {
+  
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+font-size: 14px;
+font-weight: 700;
+color: #1E90FF;
+border-radius: 50%;
+background-color: #FFFFFF;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+	</style>
+</head>
+<header style="margin-bottom: 200px;"></header>
+<header style="display: flex; justify-content: space-between; align-items: center; background-color: #f1f1f1; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 1;">
+        
+        
+    <h1 style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin: 0;">طنجيس للتكوين</h1>
+  </div>
+  <nav style="display: flex; list-style: none; margin: 0; padding: 0;">
+    <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+        <li style="margin-right: 20px;"><a href="StudentPayment.html" style="text-decoration: none; color: red; font-size: 18px;"> الأداء</a></li>
+        <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: red; font-size: 18px;">حجز موعد</a></li>
+        <li style="margin-right: 20px;"><a href="mentorRating.html" style="text-decoration: none; color: red; font-size: 18px;">  تقييم المدرب</a></li>
+        <li style="margin-right: 20px;"><a href="Studentcourses.html" style="text-decoration: none; color: red; font-size: 18px;">  الدروس</a></li>
+  
+    </ul>
+  </nav>
+  <div class="back-button" style="display: flex; align-items: center; margin-right: 20px;">
+	<a href="StudentDash.html"> <button href style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Go Back</button> </a>
+  </div>
+</header>
+<body>
+    
+    <div class="rating-container">
+        <h2 class="title">Rate Adil Madani</h2>
+        
+        <div class="criteria">
+          <h3>Attitude</h3>
+          <div class="slider-container">
+            <input type="range" min="0" max="100" value="50" class="sslider" id="slider1">
+            <span class="sslider-value">50%</span>
+          </div>
+        </div>
+        
+        <div class="criteria">
+          <h3>Patience</h3>
+          <div class="slider-container">
+            <input type="range" min="0" max="100" value="50" class="sslider" id="slider2">
+            <span class="sslider-value">50%</span>
+          </div>
+        </div>
+        
+        <div class="criteria">
+          <h3>Flexibility</h3>
+          <div class="slider-container">
+            <input type="range" min="0" max="100" value="50" class="sslider" id="slider3">
+            <span class="sslider-value">50%</span>
+          </div>
+        </div>
+        
+        <button onclick="showAlert()" class="submit-button">Submit</button>
+      </div>
+      
+<script>
+const slider1 = document.getElementById("slider1");
+const output1 = document.querySelector("#slider1 + .sslider-value");
+
+const slider2 = document.getElementById("slider2");
+const output2 = document.querySelector("#slider2 + .sslider-value");
+
+const slider3 = document.getElementById("slider3");
+const output3 = document.querySelector("#slider3 + .sslider-value");
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value + "%";
+}
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value + "%";
+}
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value + "%";
+}
+
+
+</script>
+
+
+
+<script>
+function showAlert() {
+  alert("Your rating has been submitted!");
+}
+</script>
+</body>
+</html>
+
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-3gkP/yrnTPHWh1opyn16C2Jm5C5r5QfhmPxrLJhoqbHYbNp5VASYaHbXNkxr89VI+fmJ+2k9X+5HXrJ/blKt9Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha512-jc5ZiHwuM9fLvZsP2oLvOXweWQy0t2Qm2ZqXU6hsW0yGwlsZb3T6pdv7UnP9oN/WTlzNEyItB4ZkxQ/4Ur7P8w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-vbSft+U8mqJh/uGcOG+NFvDdl4OofjQ
+  
+    

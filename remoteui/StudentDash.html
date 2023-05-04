@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الطالب</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-lyiW8N6bKj6LRZn5i5q6W5uV7wzIxDyCv11iG6LPM09X/sTtH/tQGdCk8B+gNpC+bNfu/EdtBtf8/ODAF+GNqQ==" crossorigin="anonymous" />
+<html>
+  <head>
+    <div class="header">
+      <div class="header-center">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="header-right">
+        <div class="icon notification-icon bg-secondary"><i class="bi bi-bell-fill"></i></div>
+        <div class="icon language-icon bg-danger"><i class="bi bi-globe2"></i></div>
+        <div class="icon settings-icon bg-success"><i class="bi bi-gear-fill"></i></div>
+
+      
+      </div>
+    </div>
+  
+    
+    
+    
+    <style>
+      /* Set the background color to black */
+      body {
+        background-color: blue;
+      }
+      /* Define the styles for the loader */
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid blue;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      }
+      /* Define the animation for the loader */
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Display the loader for 2 seconds -->
+    <div class="loader"></div>
+    <script>
+      setTimeout(function(){
+        // Hide the loader and display the actual page
+        document.querySelector('.loader').style.display = 'none';
+        document.body.style.overflow = 'visible';
+      }, 2000);
+    </script>
+  
+  <style>
+/* General Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* Header Styles */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #0077c2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 100px;
+}
+
+.header-center input[type="text"] {
+  width: 150px;
+  height: 25px;
+  border: none;
+  border-radius: 15px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+
+.header-center input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 150px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icon:hover {
+  background-color: #555;
+}
+
+.notification-icon::before {
+  content: "\f0f3";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: #333;
+}
+
+.language-icon::before {
+  content: "\f1ab";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: #333;
+}
+
+.settings-icon::before {
+  content: "\f013";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Slider Styles */
+
+.slider {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #eee;
+  z-index: 0;
+}
+
+
+/* Slider Styles */
+
+.slider {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #eee;
+  z-index: 0;
+}
+
+/* Slider Styles */
+
+.slider {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  background-color: #eee;
+  z-index: 0;
+}
+
+
+    /* Non-Retractable Slider */
+    #slider-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow-y: scroll;
+      z-index: 9999;
+    }
+    
+    /* Slider Styling */
+    #slider {
+      width: 20%;
+      min-width: 200px;
+     
+      padding: 20px;
+      height: 100%;
+      position: relative;
+      float: right;
+      direction: ltr;
+      background: linear-gradient(to right, #00c6fb, #005bea);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out;
+  margin: 0;
+}
+ 
+@media (max-width: 768px) {
+  .slider {
+    padding: 10px;
+    border-radius: 0;
+  }
+}
+    .slider:hover {
+  transform: scale(1.05);
+}
+    
+    /* Slider Header */
+    #slider-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    /* Slider Name */
+    #slider-name {
+      width: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    /* Slider Name Image */
+    #slider-name img {
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Slider Menu */
+    #slider-menu {
+    margin-bottom: 40px;
+  }
+
+  /* Slider Menu List */
+  #slider-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Slider Menu Item */
+  #slider-menu li {
+    margin-bottom: 10px;
+  }
+
+  /* Slider Menu Link */
+  #slider-menu a {
+    display: block;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #212529;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  /* Slider Menu Link Hover */
+  #slider-menu a:hover {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* First Menu Item */
+  #slider-menu li:first-child a {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  /* Arrow Icon */
+  #slider-menu a i {
+    margin-right: 10px;
+  }
+    /* Slider Welcome Message */
+    #slider-welcome {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 16px;
+      color: #fff;
+      text-shadow: 1px 1px #212529;
+    }
+    
+    /* Main Content Styling */
+    #main-content {
+      margin-right: 20%;
+      direction: rtl;
+    }
+    
+    /* PDF Files */
+    .list-group-item a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    
+    /* YouTube Video */
+    .embed-responsive iframe {
+      width: 100%;
+    }
+
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  direction: rtl;
+  text-align: right;
+  background-color: #f7f7f7;
+  color: #333;
+  display: flex; /* Add this line */
+  justify-content: center; /* Add this line */
+  align-items: center; /* Add this line */
+  min-height: 100vh; /* Add this line */
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.pdf {
+  width: 100%;
+  min-width: 300px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
+  right: 90px;
+}
+
+.pdf-title {
+  font-size: 1.5rem;
+  font-weight: bold;rgba(137, 97, 97, 0.2)
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pdf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-item {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.pdf-link {
+  color: #0077c0;
+  text-decoration: none;
+}
+
+.pdf-link:hover {
+  text-decoration: underline;
+}
+.video-container {
+  margin-left: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 500px; /* or any other value that fits your layout */
+}
+
+.video-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+
+.video-player {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* square aspect ratio */
+  position: relative;
+  margin-bottom: 10px;
+}
+
+
+.video-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  .video-container {
+    margin: 20px 0;
+  }
+}
+
+.pdf h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+  text-align: right;
+}
+
+.pdf-wrapper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.pdf-wrapper li {
+  margin: 10px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.pdf-wrapper li:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+.pdf-wrapper a {
+  display: block;
+  padding: 20px;
+  color: #333;
+  text-decoration: none;
+}
+
+.pdf-wrapper a:hover {
+  background-color: #f7f7f7;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  border: none;
+  
+}
+
+:root {
+      --progress-bar-color: #2196f3;
+      --progress-bar-background-color: #e0e0e0;
+      --progress-bar-height: 6px;
+      --progress-bar-radius: 10px;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #c9eceb;
+    }
+    
+    .containner {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: 310px;
+    }
+    
+    
+    .progress {
+      width: 100%;
+      height: var(--progress-bar-height);
+      background-color: var(--progress-bar-background-color);
+      border-radius: var(--progress-bar-radius);
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background-color: var(--progress-bar-color);
+      border-radius: var(--progress-bar-radius);
+      transition: width 0.5s ease-in-out;
+    }
+
+    .progress-text {
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #2196f3;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+    }
+
+
+h1 {
+  text-align: center; /* Add this line */
+  margin-top: 20px; /* Add margin-top to give some space above the heading */
+}
+h2 {
+  text-align: LEFT; /* Add this line */
+  margin-top: 20px; /* Add margin-top to give some space above the heading */
+}
+
+@media screen and (max-width: 768px) {
+  .pdf,
+  .video {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 20px; /* Add this line */
+
+  }
+}
+
+
+
+   
+  </style>
+  
+
+<body>
+  <h1> TEST TEST </h1>
+  <div class="containner">
+    <div class="progress">
+      <div class="progress-bar" style="width: 25%;"></div>
+    </div>
+    <div class="progress-text">لقد أكملت 0% من الدروس التعليمية لمرحلة تعلّم القيادة</div>
+  </div>
+
+
+    <!-- Non-Retractable Slider -->
+    <div id="slider-container">
+      <div id="slider">
+        <div id="slider-header">
+          <div id="slider-name">
+            <img src="static/images/nopic.png" alt="Profile Picture" />
+            <script type="module">
+              var name = sessionStorage.getItem("name");
+              if (name) {
+                document.getElementById("welcome-message").textContent = "Welcome " + name + "!";
+              }
+            </script>
+
+
+          </div>
+        
+          <h4 id="welcome-message"></h4>
+	
+        </div>
+        <div id="slider-menu">
+          <ul>
+            <li style="margin-right: 20px;"><a href="StudentDash.html" style="text-decoration: none; color: red; font-size: 18px;"> الرئيسية</a></li>
+            <li style="margin-right: 20px;"><a href="StudentPayment.html" style="text-decoration: none; color: red; font-size: 18px;"> الأداء</a></li>
+            <li style="margin-right: 20px;"><a href="StudentRating.html" style="text-decoration: none; color: red; font-size: 18px;">  تقييم المدرب</a></li>
+            <li style="margin-right: 20px;"><a href="book_form.html" style="text-decoration: none; color: red; font-size: 18px;">حجز موعد</a></li>
+            <li style="margin-right: 20px;"><a href="Studentcourses.html" style="text-decoration: none; color: red; font-size: 18px;">  الدروس</a></li>
+      
+          </ul>
+        </div>
+        <div id="slider-welcome">
+          <p>مرحبا بك في بوابة الطالب</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-3gkP/yrnTPHWh1opyn16C2Jm5C5r5QfhmPxrLJhoqbHYbNp5VASYaHbXNkxr89VI+fmJ+2k9X+5HXrJ/blKt9Q==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha512-jc5ZiHwuM9fLvZsP2oLvOXweWQy0t2Qm2ZqXU6hsW0yGwlsZb3T6pdv7UnP9oN/WTlzNEyItB4ZkxQ/4Ur7P8w==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-vbSft+U8mqJh/uGcOG+NFvDdl4OofjQ
+    
+    

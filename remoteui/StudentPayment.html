@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Payment Form</title>
+ 
+	<style>
+		
+
+			
+
+            .content {
+  margin-top: 100px; /* Change the value as needed to create the desired amount of space */
+}
+#payment-form {
+  width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+.payment-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+	</style>
+</head>
+<header style="margin-bottom: 200px;"></header>
+<header style="display: flex; justify-content: space-between; align-items: center; background-color: #f1f1f1; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 1;">
+        
+        
+    <h1 style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin: 0;">طنجيس للتكوين</h1>
+  </div>
+  <nav style="display: flex; list-style: none; margin: 0; padding: 0;">
+    <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+        <li style="margin-right: 20px;"><a href="StudentPayment.html" style="text-decoration: none; color: red; font-size: 18px;"> الأداء</a></li>
+        <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: red; font-size: 18px;">حجز موعد</a></li>
+        <li style="margin-right: 20px;"><a href="mentorRating.html" style="text-decoration: none; color: red; font-size: 18px;">  تقييم المدرب</a></li>
+        <li style="margin-right: 20px;"><a href="Studentcourses.html" style="text-decoration: none; color: red; font-size: 18px;">  الدروس</a></li>
+  
+    </ul>
+  </nav>
+  <div class="back-button" style="display: flex; align-items: center; margin-right: 20px;">
+	<a href="StudentDash.html"> <button href style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Go Back</button> </a>
+  </div>
+</header>
+<body>
+    <div class="payment-container">
+
+    <form id="payment-form">
+        <h2>Payment Details</h2>
+        <div class="form-group">
+          <label for="name">Name on Card</label>
+          <input type="text" id="name" name="name" placeholder="Enter name on card">
+        </div>
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" name="card-number" placeholder="Enter card number">
+        </div>
+        <div class="form-group">
+          <label for="expiry-date">Expiry Date</label>
+          <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" name="cvv" placeholder="Enter CVV">
+        </div>
+        <div class="form-group">
+          <label for="amount">Amount</label>
+          <input type="text" id="amount" name="amount" placeholder="Enter amount to pay">
+        </div>
+        <button type="submit">Pay Now</button>
+      </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<script>
+    const form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const cardNumber = document.getElementById('card-number').value;
+  const expiryDate = document.getElementById('expiry-date').value;
+  const cvv = document.getElementById('cvv').value;
+  const amount = document.getElementById('amount').value;
+  
+  // Here you can add your code for processing the payment
+  
+  alert(`Payment Successful! Thank you for your purchase of $${amount}`);
+  
+  form.reset();
+});
+
+</script>
+	
+
+</body>
+</html>
+
+<script src="BusinessIntelligence/CalculateAmountDue.js"></script>  

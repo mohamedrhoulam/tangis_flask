@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Payment Form</title>
+ 
+    <style>
+        .pdf-list li {
+          padding: 10px;
+          background-color: #f7f7f7;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+        
+        .pdf-list li:nth-child(odd) {
+          background-color: #f2f2f2;
+        }
+        
+        .pdf-list li.unavailable {
+          background-color: #f2dede;
+        }
+        
+        .pdf-list li.unavailable a {
+          color: #a94442;
+          text-decoration: none;
+          cursor: not-allowed;
+        }
+        
+        .video-container {
+          margin-top: 20px;
+        }
+        
+        .video-container h4 {
+          margin-bottom: 10px;
+          font-size: 24px;
+          font-weight: bold;
+          text-align: center;
+        }
+        
+        .video-container .embed-responsive {
+          margin-bottom: 20px;
+          border-radius: 5px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+      </style>
+</head>
+<header style="margin-bottom: 200px;"></header>
+<header style="display: flex; justify-content: space-between; align-items: center; background-color: #f1f1f1; padding: 20px; position: fixed; top: 0; left: 0; width: 100%; z-index: 1;">
+        
+        
+    <h1 style="font-size: 24px; font-weight: bold; color: #1a1a1a; margin: 0;">طنجيس للتكوين</h1>
+  </div>
+  <nav style="display: flex; list-style: none; margin: 0; padding: 0;">
+    <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+      <li style="margin-right: 20px;"><a href="StudentPayment.html" style="text-decoration: none; color: red; font-size: 18px;"> الأداء</a></li>
+      <li style="margin-right: 20px;"><a href="#" style="text-decoration: none; color: red; font-size: 18px;">حجز موعد</a></li>
+      <li style="margin-right: 20px;"><a href="ExcelentRating.html" style="text-decoration: none; color: red; font-size: 18px;">  تقييم المدرب</a></li>
+      <li style="margin-right: 20px;"><a href="Studentcourses.html" style="text-decoration: none; color: red; font-size: 18px;">  الدروس</a></li>
+
+    </ul>
+  </nav>
+  <div class="back-button" style="display: flex; align-items: center; margin-right: 20px;">
+	<a href="StudentDash.html"> <button href style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 16px; cursor: pointer;">Go Back</button> </a>
+  </div>
+</header>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-5">PDF files and Videos</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h4 class="mb-4">PDF Files</h4>
+            <ul class="list-unstyled pdf-list">
+              <li><a href="#">الإشارات</a></li>
+              <li><a href="#">الوقوف و التوقف</a></li>
+              <li><a href="#">السلامة الطرقي</a></li>
+              <li class="unavailable"><a href="#">الملتقيات الطرقية</a></li>
+              
+            </ul>
+          </div>
+          <div class="col-md-6 video-container">
+            <h4>E-learning Videos </h4>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=LUSPrpaLw0k allowfullscreen></iframe>
+            </div>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=gMvl_JFQUCc" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+</html>
