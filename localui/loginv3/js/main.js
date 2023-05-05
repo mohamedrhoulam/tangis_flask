@@ -1,8 +1,6 @@
 
 (function ($) {
-    "use strict";
-
-
+    "use strict";    
     /*==================================================================
     [ Focus input ]*/
     $('.input100').each(function(){
@@ -65,7 +63,27 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
+     /*==================================================================
+[ Admin Login ]*/
+    	function login(event) {
+						  event.preventDefault(); // prevent the form from being submitted
+						
+						  var email = document.getElementById("email").value;
+						  var password = document.getElementById("password").value;
+						  var name = document.getElementById("fname").value;
+						
+						  // Compare the email and password to a hardcoded email and password
+						  if (email === "Tangis" && password === "tangis3") {
+							// If the email and password match, store the name in sessionStorage and redirect the user to the dashboard page
+							sessionStorage.setItem("name", name);
+							window.location.href = "StudentDash.html";
+						  } else {
+							// If the email and password don't match, show an error message to the user
+							alert("Invalid username or password!");
+						  }
+						}
+						
+						
     /*==================================================================
     [ Show pass ]*/
     var showPass = 0;
