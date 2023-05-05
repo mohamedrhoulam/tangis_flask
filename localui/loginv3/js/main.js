@@ -83,7 +83,8 @@
 						  }
 						}
 						
-						
+					document.querySelector(".login100-form").addEventListener("submit", login);
+
     /*==================================================================
     [ Show pass ]*/
     var showPass = 0;
